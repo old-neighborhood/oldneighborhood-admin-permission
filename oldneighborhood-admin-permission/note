@@ -1,0 +1,15 @@
+1.使用输入框以及键值对的方式进行前端的输入完成
+	url:[-]
+	name:[-]设置可选项——flow/ticket_online/ticket_offline/parking_lot
+	key:[-]	value[-]
+	key:[-] value[-]
+	
+2.新建管理员有数量限制
+
+3.管理员权限ReadOnly - ALL 
+	{"admin":"r/w",
+	"market":"r/w", 
+	"site":"r/w", 
+	"announcement":"r/w", 
+	"forum":"r/w", 
+	"statistic":"r/w"}
