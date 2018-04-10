@@ -64,4 +64,10 @@ public class AdminServiceImpl implements AdminService{
 		return admins;
 	}
 
+	@Override
+	public String findbyID(String ad_ID) {
+		Admin admin = adminDao.findOne(ad_ID);
+		return admin.toString();
+	}
+
 }

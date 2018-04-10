@@ -24,6 +24,11 @@ public class AdminController {
 		return json.toString();
 	}
 	
+	@RequestMapping("/profile")
+	public String info(@RequestBody Map<String, Object> reqMap) {
+		return adminService.findbyID(reqMap.get("ad_ID").toString());
+	}
+	
 	// 创建新的管理员
 	@RequestMapping("/new")
 	public String newAdmin(@RequestBody Map<String, Object> reqMap) {

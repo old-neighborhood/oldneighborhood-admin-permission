@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLDataException;
 import com.oldneighborhood.demo.dao.APIDao;
 import com.oldneighborhood.demo.entity.API;
 import com.oldneighborhood.demo.service.APIService;
@@ -47,6 +48,16 @@ public class APIServiceImpl implements APIService{
 	public List<API> display() {
 		List<API> apis = apiDao.findAll();
 		return apis;
+	}
+	
+	@Override
+	public String getURL(String api_name) throws MySQLDataException{
+		return apiDao.getURL(api_name);
+	}
+
+	@Override
+	public API findbyID(String api_ID) {
+		return apiDao.findOne(api_ID);
 	}
 
 }
