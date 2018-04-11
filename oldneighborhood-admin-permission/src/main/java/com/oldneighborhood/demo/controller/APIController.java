@@ -5,12 +5,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLDataException;
 import com.oldneighborhood.demo.entity.API;
 import com.oldneighborhood.demo.service.APIService;
 
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 /**
  * @ClassName: APIController  
  * @Description: 只有新建和修改两个选择 ,同一个name(实现同一个信息获取)的只能建立一个
@@ -18,6 +20,7 @@ import net.sf.json.JSONArray;
  * @date 2018年4月4日  
  */
 @RequestMapping("/api")
+@RestController
 public class APIController {
 	
 	@Autowired
@@ -43,22 +46,24 @@ public class APIController {
 	// 创建新的API接口
 	@RequestMapping("/new")
 	public String newAPI(@RequestBody Map<String, Object> reqMap) {
+		JSONObject reqjs = JSONObject.fromObject(reqMap.get("request"));
+		JSONObject resjs = JSONObject.fromObject(reqMap.get("response"));
 		API api = new API(
 				reqMap.get("api_name").toString(), 
 				reqMap.get("api_url").toString(), 
-				reqMap.get("request").toString(), 
-				reqMap.get("response").toString());
+				reqjs, resjs);
 		return apiService.newAPI(api);
 	}
 
 	@RequestMapping("/modify")
 	public String modifyAPI(@RequestBody Map<String, Object> reqMap) {
+		JSONObject reqjs = JSONObject.fromObject(reqMap.get("request"));
+		JSONObject resjs = JSONObject.fromObject(reqMap.get("response"));
 		API api = new API(
 				reqMap.get("api_ID").toString(),
 				reqMap.get("api_name").toString(), 
 				reqMap.get("api_url").toString(), 
-				reqMap.get("request").toString(), 
-				reqMap.get("response").toString());
+				reqjs, resjs);
 		return apiService.modifyAPI(api);
 	}
 

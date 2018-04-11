@@ -13,3 +13,6 @@
 	"announcement":"r/w", 
 	"forum":"r/w", 
 	"statistic":"r/w"}
+	
+4.entity.toString()显示如下
+	Admin(ad_name=bryan05, ad_ID=e5593136d44b442c80549a9bb49dc00a, ad_password=bryan, ad_image=/image/what, ad_permission=NONE)

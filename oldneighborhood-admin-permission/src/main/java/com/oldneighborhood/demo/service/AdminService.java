@@ -13,6 +13,6 @@ public interface AdminService {
 	
 	public String deleteAdmin(String admin_ID);
 
-	public String findbyID(String ad_ID);
+	public Admin findbyID(String ad_ID);
 
 }

@@ -5,13 +5,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.oldneighborhood.demo.entity.Admin;
 import com.oldneighborhood.demo.service.AdminService;
 
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 @RequestMapping("/admin")
+@RestController
 public class AdminController {
 	
 	@Autowired
@@ -26,7 +29,9 @@ public class AdminController {
 	
 	@RequestMapping("/profile")
 	public String info(@RequestBody Map<String, Object> reqMap) {
-		return adminService.findbyID(reqMap.get("ad_ID").toString());
+		Admin admin = adminService.findbyID(reqMap.get("ad_ID").toString());
+		JSONObject js = JSONObject.fromObject(admin);
+		return js.toString();
 	}
 	
 	// 创建新的管理员

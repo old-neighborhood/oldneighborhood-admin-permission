@@ -3,17 +3,22 @@ package com.oldneighborhood.demo.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name="admin")
 @Data
+@NoArgsConstructor //不加这个会报 No default constructors for entity??
 @AllArgsConstructor
 public class Admin implements Serializable{
 	private static final long serialVersionUID = 3345934804530920377L;
 	private String ad_name;
+	@Id
 	private String ad_ID;
 	private String ad_password;
 	private String ad_image;
