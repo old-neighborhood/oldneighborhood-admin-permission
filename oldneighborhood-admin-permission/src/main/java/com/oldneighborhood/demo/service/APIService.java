@@ -13,7 +13,7 @@ public interface APIService {
 	
 	public List<API> display();
 
-	public API findbyID(String api_ID);
+	public API findbyName(String api_name);
 
 	public String getURL(String api_name) throws MySQLDataException;
 

@@ -35,7 +35,7 @@ public class APIController {
 	
 	@RequestMapping("/oneAPI")
 	public String oneAPI(@RequestBody Map<String, Object> reqMap) {
-		return apiService.findbyID(reqMap.get("api_ID").toString()).toString();
+		return apiService.findbyName(reqMap.get("api_name").toString()).toString();
 	}
 	//可能因为没有配置找不到api
 	@RequestMapping("/geturl")

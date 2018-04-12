@@ -11,6 +11,9 @@ public interface APIDao extends JpaRepository<API, String>{
 	@Query(value = "select api_url from api_data where api_name = ?", nativeQuery = true) 
 	public String getURL(String api_name);
 	
+	@Query(value = "select * from api_data where api_name = ?", nativeQuery = true) 
+	public API findByName(String api_name);
+	
 	@Modifying
 	@Query(value = "update api_data "
 					+ "set api_name = ?, api_url = ?, api_reqMap = ?, api_resMap = ? "

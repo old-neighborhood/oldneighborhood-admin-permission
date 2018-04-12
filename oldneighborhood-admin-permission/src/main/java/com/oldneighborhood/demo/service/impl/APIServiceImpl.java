@@ -56,8 +56,8 @@ public class APIServiceImpl implements APIService{
 	}
 
 	@Override
-	public API findbyID(String api_ID) {
-		return apiDao.findOne(api_ID);
+	public API findbyName(String api_name) {
+		return apiDao.findByName(api_name);
 	}
 
 }
