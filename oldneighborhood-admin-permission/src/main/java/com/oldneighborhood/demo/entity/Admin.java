@@ -26,11 +26,18 @@ public class Admin implements Serializable{
 	//{"admin":"r/w", "site":"r/w", "announcement":"r/w", "forum":"r/w", "statistic":"r/w"}
 	private String ad_permission;
 	
-	public Admin(String ad_name, String ad_password, String ad_image, String ad_permission) {
+	public Admin(String ad_name, String ad_password, String ad_permission) {
 		super();
 		this.ad_name = ad_name;
 		this.ad_password = ad_password;
-		this.ad_image = ad_image;
+		this.ad_permission = ad_permission;
+	}
+
+	public Admin(String ad_name, String ad_ID, String ad_password, String ad_permission) {
+		super();
+		this.ad_name = ad_name;
+		this.ad_ID = ad_ID;
+		this.ad_password = ad_password;
 		this.ad_permission = ad_permission;
 	}
 }

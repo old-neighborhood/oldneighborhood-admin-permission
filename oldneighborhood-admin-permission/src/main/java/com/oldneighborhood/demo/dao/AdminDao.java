@@ -11,8 +11,8 @@ public interface AdminDao extends JpaRepository<Admin, String>{
 	
 	@Modifying
 	@Query(value = "update admin "
-					+ "set ad_name = ?, ad_password = ?, ad_image = ?, ad_permission = ? "
+					+ "set ad_name = ?, ad_password = ?, ad_permission = ? "
 					+ "where ad_ID = ? ", nativeQuery = true) 
-	public void modifyAdmin(String ad_name, String ad_password, String ad_image, String ad_permission, String ad_ID);
+	public void modifyAdmin(String ad_name, String ad_password, String ad_permission, String ad_ID);
 
 }

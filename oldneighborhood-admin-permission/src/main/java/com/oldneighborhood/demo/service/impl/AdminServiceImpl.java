@@ -25,20 +25,28 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	@Transactional
 	public String newAdmin(Admin admin) {
-		if ((int)adminDao.count() <= MaxAdminAmount) {
-			admin.setAd_ID(UUID.randomUUID().toString().replaceAll("-", ""));
-			adminDao.save(admin);
-			return "{\"result\":\"success\"}";
+		if ((int)adminDao.count() < MaxAdminAmount) {
+			
+			try {
+				admin.setAd_ID(UUID.randomUUID().toString().replaceAll("-", ""));
+				admin.setAd_image(admin.getAd_ID());
+				adminDao.save(admin);
+				return "{\"result\":\"success\"}";
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return "{\"result\":\"error\"}";
 		}
+		System.out.println(adminDao.count());
 		return "{\"result\":\"full\"}";
 	}
 
 	@Override
 	@Transactional
 	public String modifyAdmin(Admin admin) {
+		
 		try {
-			adminDao.modifyAdmin(admin.getAd_name(), admin.getAd_password(), 
-					admin.getAd_image(), admin.getAd_permission(), admin.getAd_ID());
+			adminDao.modifyAdmin(admin.getAd_name(), admin.getAd_password(), admin.getAd_permission(), admin.getAd_ID());
 			return "{\"result\":\"success\"}";
 		} catch (Exception e) {
 			e.printStackTrace();
