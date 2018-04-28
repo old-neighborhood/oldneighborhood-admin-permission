@@ -36,7 +36,7 @@ public class APIServiceImpl implements APIService{
 	public String modifyAPI(API api) {
 		try {
 			apiDao.modifyAPI(api.getApi_name(), api.getApi_url(),
-					api.getApi_reqMap().toString(), api.getApi_resMap().toString(), api.getApi_ID());
+					api.getReq_pairs().toString(), api.getRes_pairs().toString(), api.getApi_ID());
 			return "{\"result\":\"success\"}";
 		} catch (Exception e) {
 			e.printStackTrace();
