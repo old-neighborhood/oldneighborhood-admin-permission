@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2018年4月4日  
  */
 @SpringBootApplication
-public class OldneighborhoodAdminPermissionApplication {
+public class OldneighborhoodConfigApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OldneighborhoodAdminPermissionApplication.class, args);
+		SpringApplication.run(OldneighborhoodConfigApplication.class, args);
 	}
 }

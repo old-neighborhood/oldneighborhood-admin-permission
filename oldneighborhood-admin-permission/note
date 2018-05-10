@@ -15,4 +15,18 @@
 	"statistic":"r/w"}
 	
 4.entity.toString()显示如下
-	Admin(ad_name=bryan05, ad_ID=e5593136d44b442c80549a9bb49dc00a, ad_password=bryan, ad_image=/image/what, ad_permission=NONE)
+	Admin(ad_name=bryan05, ad_ID=e5593136d44b442c80549a9bb49dc00a, 
+	ad_password=bryan, ad_image=/image/what, ad_permission=NONE)
+
++ config
+	+ Admin & API config
+	+ Statistics
+	
+2.文件上传下载
+	https://yq.aliyun.com/articles/401284
+	
+3.交互的场景
+	--人流量：历史数据输入 | 实时监控/闸机/WIFI探针
+	--票务：购票系统 | 线下买票系统
+	--停车场：停车场管理系统
+	flow/ticket_online/ticket_offline/parking_lot
