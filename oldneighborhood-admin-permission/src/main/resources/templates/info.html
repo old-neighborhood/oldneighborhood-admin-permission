@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>neighborhood-config-service</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>neighborhood-config-service</th>
+				<th>url</th>
+				<th>request</th>
+				<th>response</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>查看所有管理员信息</td>
+				<td>/config/admin/all</td>
+				<td></td>
+				<td>[adminobj1,obj2,...]</td>
+			</tr>
+			<tr>
+				<td>查看某个管理员信息</td>
+				<td>/config/admin/profile</td>
+				<td>{"ad_ID":""}</td>
+				<td>{"ad_name":"","ad_ID":"","ad_password":"","ad_image":"","ad_permission":"";</td>
+			</tr>
+			<tr>
+				<td>新增管理员（不超过10个）</td>
+				<td>/config/admin/new</td>
+				<td>ad_name/ad_password/ad_image/ad_permission</td>
+				<td>{"result":"success"/"error"/"full"}</td>
+			</tr>
+			<tr>
+				<td>修改管理员信息</td>
+				<td>/config/admin/modify</td>
+				<td>ad_ID/ad_name/ad_password/ad_image/ad_permission</td>
+				<td>{"result":"success"/"error"}</td>
+			</tr>
+			<tr>
+				<td>删除管理员</td>
+				<td>/config/admin/delete</td>
+				<td>ad_ID</td>
+				<td>{"result":"success"/"error"}</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>neighborhood-config-service</th>
+				<th>url</th>
+				<th>request</th>
+				<th>response</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>查看所有api</td>
+				<td>/config/api/all</td>
+				<td></td>
+				<td>[apiobj1,obj2,...]</td>
+			</tr>
+			<tr>
+				<td>查看某个api信息</td>
+				<td>/config/api/oneAPI</td>
+				<td>{"api_name":""}</td>
+				<td>{"api_ID":"","api_name":"","api_url":"","req_pairs":"","res_pairs":""}</td>
+			</tr>
+			<tr>
+				<td>配置api</td>
+				<td>/config/api/new</td>
+				<td>api_name/api_url/request/response</td>
+				<td>{"result":"success"/"error"}</td>
+			</tr>
+			<tr>
+				<td>修改api</td>
+				<td>/config/api/modify</td>
+				<td>/api_ID/api_name/api_url/request/response</td>
+				<td>{"result":"success"/"error"}</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

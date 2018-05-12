@@ -15,7 +15,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 /**
  * @ClassName: APIController  
- * @Description: 只有新建和修改两个选择 ,同一个name(实现同一个信息获取)的只能建立一个
+ * @Description: 只有修改选项 ,同一个name(实现同一个信息获取)的只能建立一个
  * @author user005  
  * @date 2018年4月4日  
  */

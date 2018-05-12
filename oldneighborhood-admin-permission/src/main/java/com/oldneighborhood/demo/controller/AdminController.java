@@ -40,6 +40,7 @@ public class AdminController {
 		Admin admin = new Admin(
 				reqMap.get("ad_name").toString(), 
 				reqMap.get("ad_password").toString(),
+				reqMap.get("ad_image").toString(),
 				reqMap.get("ad_permission").toString());
 		return adminService.newAdmin(admin);
 	}
@@ -47,9 +48,10 @@ public class AdminController {
 	@RequestMapping("/modify")
 	public String modifyAdmin(@RequestBody Map<String, Object> reqMap) {
 		Admin admin = new Admin(
-				reqMap.get("ad_name").toString(),
 				reqMap.get("ad_ID").toString(),
-				reqMap.get("ad_password").toString(),  
+				reqMap.get("ad_name").toString(),
+				reqMap.get("ad_password").toString(), 
+				reqMap.get("ad_image").toString(),
 				reqMap.get("ad_permission").toString());
 		return adminService.modifyAdmin(admin);
 	}
