@@ -28,7 +28,7 @@ public class AdminServiceImpl implements AdminService{
 		if ((int)adminDao.count() < MaxAdminAmount) {
 			try {
 				admin.setAd_ID(UUID.randomUUID().toString().replaceAll("-", ""));
-				admin.setAd_image(admin.getAd_ID());
+//				admin.setAd_image(admin.getAd_ID());
 				adminDao.save(admin);
 				return "{\"result\":\"success\"}";
 			} catch (Exception e) {

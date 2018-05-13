@@ -19,6 +19,8 @@ public class API implements Serializable{
 	private String api_name;
 	private String api_url;
 	//Map<String, Object>格式->JSON
+//	private String access_key;
+	
 	private String req_pairs;
 	private String res_pairs;
 //	private String api_reqMap;
