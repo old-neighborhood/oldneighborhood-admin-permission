@@ -2,7 +2,6 @@ package com.oldneighborhood.demo.service;
 
 import java.util.List;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLDataException;
 import com.oldneighborhood.demo.entity.API;
 
 public interface APIService {
@@ -15,6 +14,6 @@ public interface APIService {
 
 	public API findbyName(String api_name);
 
-	public String getURL(String api_name) throws MySQLDataException;
+//	public String getURL(String api_name) throws MySQLDataException;
 
 }

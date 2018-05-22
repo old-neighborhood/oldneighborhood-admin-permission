@@ -7,7 +7,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-import net.sf.json.JSONObject;
+
+/**
+ * @ClassName: API  
+ * @Description: TODO 
+ * @author Brian  
+ * @date 2018年5月22日  
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| api_ID   | char(32)    | NO   | PRI | NULL    |       |
+| api_name | varchar(32) | NO   |     | NULL    |       |
+| api_url  | varchar(64) | NO   |     | NULL    |       |
+| api_key  | varchar(32) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+ */
+
 
 @Entity
 @Table(name="api_data")
@@ -18,29 +33,26 @@ public class API implements Serializable{
 	private String api_ID;
 	private String api_name;
 	private String api_url;
-	//Map<String, Object>格式->JSON
-//	private String access_key;
+	private String api_key;
 	
-	private String req_pairs;
-	private String res_pairs;
-//	private String api_reqMap;
-//	private String api_resMap;
+//	private String req_pairs;
+//	private String res_pairs;
+////	private String api_reqMap;
+////	private String api_resMap;
 	//新建api实体
-	public API(String api_name, String url, JSONObject reqMap, JSONObject resMap) {
+	public API(String api_name, String url, String key) {
 		super();
 		this.api_name = api_name;
 		this.api_url = url;
-		this.req_pairs = reqMap.toString();
-		this.res_pairs = resMap.toString();
+		this.api_key = key;
 	}
-	public API(String api_ID, String api_name, String api_url, JSONObject reqMap, JSONObject resMap) {
+	//修改API
+	public API(String api_ID, String api_name, String api_url, String api_key) {
 		super();
 		this.api_ID = api_ID;
 		this.api_name = api_name;
 		this.api_url = api_url;
-//		System.out.println(reqMap.toString());
-		this.req_pairs = reqMap.toString();
-		this.res_pairs = resMap.toString();
+		this.api_key = api_key;
 	}
 	
 }
