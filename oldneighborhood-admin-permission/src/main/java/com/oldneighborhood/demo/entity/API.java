@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @ClassName: API  
@@ -27,6 +28,7 @@ import lombok.Data;
 @Entity
 @Table(name="api_data")
 @Data
+@NoArgsConstructor
 public class API implements Serializable{
 	private static final long serialVersionUID = 7110320250595595442L;
 	@Id
